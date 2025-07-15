@@ -17,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/JDXE22/portfolio-backend/issues"
   },
-  "homepage": "https://github.com/JDXE22/portfolio-backend#readme"
+  "homepage": "https://github.com/JDXE22/portfolio-backend#readme",
+  "dependencies": {
+    "express": "5.1.0",
+    "dotenv": "17.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "@types/node": "24.0.13",
+    "morgan": "1.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
 }
