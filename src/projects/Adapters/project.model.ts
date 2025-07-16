@@ -42,13 +42,11 @@ const projectSchema = new Schema <IProject>({
   },
 });
 
+projectSchema.virtual("id").get(function() {return this._id.toHexString(); });
 projectSchema.set("toJSON", {
-    transform: (document, returnedObject) => {
-        (returnedObject as any).id = (returnedObject as any)._id?.toString();
-        delete (returnedObject as any)._id;
-        delete (returnedObject as any).__v;
-    }
-})
+  virtuals: true,
+  versionKey: false,
+});
 
 export const ProjectModel = mongoose.model("Project", projectSchema);
 
