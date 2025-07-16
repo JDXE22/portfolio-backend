@@ -1,7 +1,7 @@
 import { Document } from "mongoose"
 import { DifficultyLevel, LiveStatus } from "../../shared/types"
 
-export interface Project extends Document {
+export interface IProject extends Document {
     id: string
     title: string
     description: string
