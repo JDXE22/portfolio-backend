@@ -34,6 +34,7 @@ const projectSchema = new Schema <IProject>({
     type: String,
     enum: Object.values(LiveStatus),
     required: true,
+    default: LiveStatus.LIVE,
   },
   difficultyLevel: {
     type: String,
