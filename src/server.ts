@@ -4,7 +4,6 @@ import { errorHandler } from "./shared/error.handler";
 export const server = express();
 server.use(express.json());
 
-server.use(errorHandler)
-
 server.use("/projects", projectRouter)
 
+server.use(errorHandler)
