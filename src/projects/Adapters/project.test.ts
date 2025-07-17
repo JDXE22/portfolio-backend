@@ -3,7 +3,7 @@ import supertest from "supertest";
 import { server } from "../../server";
 import test, { after, beforeEach, describe } from "node:test";
 import { ProjectModel } from "./project.model";
-import { initialProject} from "./../../../tests/helpers/testHelper.test"
+import { initialProject} from "../../../tests/helpers/testHelper"
 import mongoose from "mongoose";
 
 const api = supertest(server)
@@ -30,4 +30,5 @@ after(async () => {
     console.log("Database cleared after tests.");
     mongoose.connection.close();
     console.log("Server closed after tests.");
+    // server.close();
 })
