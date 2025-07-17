@@ -2,8 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import { DifficultyLevel, LiveStatus } from "../../shared/types";
 import { IProject } from "../Domain/project.domain";
 
-const projectSchema = new Schema <IProject>({
-
+const projectSchema = new Schema<IProject>({
   title: {
     type: String,
     required: true,
@@ -43,12 +42,12 @@ const projectSchema = new Schema <IProject>({
   },
 });
 
-projectSchema.virtual("id").get(function() {return this._id.toHexString(); });
+projectSchema.virtual("id").get(function () {
+  return this._id.toHexString();
+});
 projectSchema.set("toJSON", {
   virtuals: true,
   versionKey: false,
 });
 
 export const ProjectModel = mongoose.model("Project", projectSchema);
-
-

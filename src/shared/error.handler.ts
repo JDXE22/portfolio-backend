@@ -26,7 +26,7 @@ export const errorHandler: ErrorRequestHandler = (
     (error as any).name === "MongoServerError" &&
     (error as any).code === 11000
   ) {
-    return res.status(400).json({ error: "expected `username` to be unique" });
+    return res.status(400).json({ error: error.message });
   }
 
   const errorDefinition = errorMap[(error as any).name] || errorMap.default;
