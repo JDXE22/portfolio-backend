@@ -1,6 +1,6 @@
 const jestSettings = {
   preset: "ts-jest",
-  testMatch: ["src/**/*.test.ts"],
+  testMatch: ["**/*.test.ts"],
   reporters: [
     "default",
     [
