@@ -17,11 +17,9 @@ beforeAll(async () => {
 
 beforeEach(async () => {
   await ProjectModel.deleteMany({});
-  console.log("Database cleared before each test.");
   for (const project of initialProject) {
     await ProjectModel.create(project);
   }
-  console.log("Initial projects seeded.");
 });
 
 describe("Project API Tests", () => {
