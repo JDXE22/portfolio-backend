@@ -25,7 +25,7 @@ beforeEach(async () => {
 });
 
 describe("Project API Tests", () => {
-  it("GET /api/projects should return all projects", async () => {
+  it("GET /projects should return all projects", async () => {
     await api
       .get("/projects")
       .expect(200)
