@@ -1,6 +1,6 @@
 import "dotenv/config";
 import supertest from "supertest";
-import { server } from "../../server";
+import { httpServer, server } from "../../server";
 import { ProjectModel } from "./project.model";
 import { initialProject } from "../../../tests/helpers/testHelper";
 import mongoose from "mongoose";
@@ -40,5 +40,5 @@ describe("Project API Tests", () => {
 
 afterAll(async () => {
   mongoose.connection.close();
-  // server.close();
+  httpServer.close();
 });
