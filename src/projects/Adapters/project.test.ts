@@ -16,7 +16,6 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
-  await ProjectModel.deleteMany({});
   for (const project of initialProject) {
     await ProjectModel.create(project);
   }
@@ -32,10 +31,10 @@ describe("Project API Tests", () => {
 
   it("GET /api/projects should return an empty array when no projects exist", async () => {
     await ProjectModel.deleteMany({});
-
     const response = await api.get("/projects").expect(200);
     expect(response.body).toEqual([]);
   });
+  
 });
 
 afterAll(async () => {
