@@ -16,7 +16,7 @@ export const EmailService: nodemailer.Transporter = nodemailer.createTransport({
   secure: true,
 });
 
-export async function sendEmail(
+export async function sendEmailRouter(
   options: Omit<SendMailOptions, "from">,
 ): Promise<void> {
   try {
