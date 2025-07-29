@@ -1,6 +1,5 @@
 import nodemailer from "nodemailer";
 import { GMAIL_HOST, GMAIL_PASS, GMAIL_PORT, GMAIL_USER } from "./config.env";
-import { NextFunction } from "express";
 
 export const EmailService: nodemailer.Transporter = nodemailer.createTransport({
   host: GMAIL_HOST,
@@ -22,8 +21,8 @@ export async function sendEmail(
       subject: options.subject,
       text: options.text,
       html: options.html,
-      cc: options.cc,
-      bcc: options.bcc,
+      cc: options.cc || undefined,
+      bcc: options.bcc || undefined,
       attachments: options.attachments,
     });
   } catch (error: Error | any) {
