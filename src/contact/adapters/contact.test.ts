@@ -1,16 +1,12 @@
-
 import { jest } from "@jest/globals";
 jest.mock("../useCases/sendContact", () => ({
-  sendContact: jest.fn<() => Promise<boolean>>().mockResolvedValue(true)
+  sendContact: jest.fn<() => Promise<boolean>>().mockResolvedValue(true),
 }));
 import supertest from "supertest";
 import { httpServer } from "../../server";
 import mongoose from "mongoose";
 import { MONGO_TEST_URI } from "../../shared/config.env";
 import { initialMessage } from "../../../tests/helpers/testHelper";
-
-
-
 
 const api = supertest(httpServer);
 beforeAll(async () => {
@@ -28,8 +24,7 @@ describe("Contact API Tests", () => {
       .send(initialMessage)
       .expect(200)
       .expect("Content-Type", /json/);
-  expect.objectContaining({ email: "test@example.com" }),
-  expect.any(Function)
+    expect.objectContaining({ email: "test@example.com" });
   });
 });
 
