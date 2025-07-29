@@ -12,4 +12,6 @@ export const GMAIL_PASS = process.env.GMAIL_PASS
 
 export const GMAIL_PORT = process.env.GMAIL_PORT
 
+export const MONGO_TEST_URI = process.env.MONGO_TEST_URI
+
 
