@@ -16,6 +16,7 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
+  await ProjectModel.deleteMany({})
   for (const project of initialProject) {
     await ProjectModel.create(project);
   }
