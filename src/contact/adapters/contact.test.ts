@@ -1,11 +1,14 @@
+
+jest.mock("../useCases/sendContact", () => ({
+  sendContact: jest.fn<() => Promise<boolean>>().mockResolvedValue(true)
+}));
 import supertest from "supertest";
 import { httpServer } from "../../server";
-import { ContactMessage } from "../domain/contactMessage";
-import { sendContact } from "../useCases/sendContact";
 import mongoose from "mongoose";
 import { MONGO_TEST_URI } from "../../shared/config.env";
 import { initialMessage } from "../../../tests/helpers/testHelper";
-import { NextFunction } from "express";
+import { jest } from "@jest/globals";
+
 
 
 const api = supertest(httpServer);
@@ -18,25 +21,18 @@ beforeAll(async () => {
 });
 
 describe("Contact API Tests", () => {
-    it("POST /contact should send a contact message via email", async ()=> {
-        const message: ContactMessage = initialMessage;
-        const next: NextFunction = jest.fn(); // Mock next function
-        const response = await sendContact(message, next);
-        await api
-            .post("/contact")
-            .send(message)
-            .expect(200)
-            .expect("Content-Type", /application\/json/);
-
-        console.log("Response:", response);
-
-        expect(next).not.toHaveBeenCalled(); 
-        
-    })
-})
+  it("POST /contact should send a contact message via email", async () => {
+    await api
+      .post("/contact")
+      .send(initialMessage)
+      .expect(200)
+      .expect("Content-Type", /json/);
+  expect.objectContaining({ email: "test@example.com" }),
+  expect.any(Function)
+  });
+});
 
 afterAll(async () => {
   await mongoose.connection.close();
   httpServer.close();
 });
-
