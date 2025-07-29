@@ -12,17 +12,18 @@ export async function sendContact(
         <h1>New contact from ${name}</h1>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong> ${message}</p>`;
+        <p><strong>Message:</strong> ${message}</p>
+        ${cc ? `<p><strong>CC:</strong> ${cc}</p>` : ""}
+        ${bcc ? `<p><strong>BCC:</strong> ${bcc}</p>` : ""}
+    `;
 
   try {
     await sendEmail(
       {
         to: GMAIL_USER,
-        subject: `Portafolio Contact: ${subject}`,
+        subject: `Portfolio Contact: ${subject}`,
         html,
-      },
-      next
-    );
+      });
   } catch (error) {
     next(error);
   }
