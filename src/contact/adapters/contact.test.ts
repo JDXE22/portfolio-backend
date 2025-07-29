@@ -1,4 +1,5 @@
 
+import { jest } from "@jest/globals";
 jest.mock("../useCases/sendContact", () => ({
   sendContact: jest.fn<() => Promise<boolean>>().mockResolvedValue(true)
 }));
@@ -7,7 +8,7 @@ import { httpServer } from "../../server";
 import mongoose from "mongoose";
 import { MONGO_TEST_URI } from "../../shared/config.env";
 import { initialMessage } from "../../../tests/helpers/testHelper";
-import { jest } from "@jest/globals";
+
 
 
 

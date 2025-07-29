@@ -1,14 +1,16 @@
 import { Router } from "express";
 import { sendContact } from "../useCases/sendContact";
+import multer from "multer";
 
-export const contactRouter = Router()
+const upload = multer();
 
-contactRouter.post("/",
-async (req, res, next) => {
-    try {
-        const result = await sendContact(req.body, next);
-        res.status(200).json({success: true, message: result});
-    } catch (error) {
-        next(error);
-    }
-  })
+export const contactRouter = Router();
+
+contactRouter.post("/", upload.array("attachments"), async (req, res, next) => {
+  try {
+    const result = await sendContact(req.body, next);
+    res.status(200).json({ success: result });
+  } catch (err) {
+    next(err);
+  }
+});
