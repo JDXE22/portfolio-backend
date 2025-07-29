@@ -1,4 +1,4 @@
-import { sendEmail } from "../../shared/emailService";
+import { sendEmailRouter } from "../../shared/emailService";
 import { ContactMessage } from "../domain/contactMessage";
 import { GMAIL_USER } from "../../shared/config.env";
 import { NextFunction } from "express";
@@ -26,7 +26,7 @@ export async function sendContact(
     `;
 
   try {
-    await sendEmail(
+    await sendEmailRouter(
       {
         to: GMAIL_USER,
         subject: `Portfolio Contact: ${subject}`,

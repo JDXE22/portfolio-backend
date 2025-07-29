@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "nodemon src/index.ts",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "testEmail": "jest src/contact/adapters/contact.test.ts"
   },
   "repository": {
     "type": "git",
