@@ -14,7 +14,6 @@ export const EmailService: nodemailer.Transporter = nodemailer.createTransport({
 
 export async function sendEmail(
   options: nodemailer.SendMailOptions,
-  next: NextFunction
 ): Promise<void> {
   try {
     await EmailService.sendMail({
@@ -27,7 +26,7 @@ export async function sendEmail(
       bcc: options.bcc,
       attachments: options.attachments,
     });
-  } catch (error) {
-    next(error);
+  } catch (error: Error | any) {
+    throw new Error(`Failed to send email: ${error.message}`);
   }
 }
