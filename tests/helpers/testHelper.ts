@@ -1,5 +1,5 @@
 import { ContactMessage } from "../../src/contact/domain/contactMessage"
-import {IProject} from "../../src/projects/Domain/project.domain"
+import {IProject} from "../../src/projects/domain/project.domain"
 import { DifficultyLevel, LiveStatus } from "../../src/shared/types"
 export const initialProject: IProject[] = [{
     id: "1",
