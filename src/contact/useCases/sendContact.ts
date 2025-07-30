@@ -9,7 +9,7 @@ export async function sendContact(
   next: NextFunction
 ): Promise<boolean> {
   const mailAttachments =data.attachments?.map((attachment) => ({
-    __filename: attachment.originalname,
+    filename: attachment.originalname,
     content: attachment.buffer,
     contentType: attachment.mimetype,
   }))
@@ -22,8 +22,6 @@ export async function sendContact(
         <p><strong>Message:</strong> ${message}</p>
         ${cc ? `<p><strong>CC:</strong> ${cc}</p>` : ""}
         ${bcc ? `<p><strong>BCC:</strong> ${bcc}</p>` : ""}
-        
-
     `;
 
   try {
