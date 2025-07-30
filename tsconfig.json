@@ -104,7 +104,8 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.test.ts"
+    "src/**/*.test.ts",
+    "src/**/*.json"
   ],
   "exclude": [
     "node_modules"
