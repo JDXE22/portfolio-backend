@@ -13,7 +13,7 @@ export const initialProject: IProject[] = [{
 
 export const initialMessage: ContactMessage = {
     name: "John Doe",
-    email: "jhon.doe@gmail.com",
+    email: "john.doe@gmail.com",
     subject: "Inquiry about project",
     message: "I would like to know more about your portfolio projects.",
     attachments: [

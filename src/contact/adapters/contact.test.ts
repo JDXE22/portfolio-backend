@@ -19,12 +19,16 @@ beforeAll(async () => {
 
 describe("Contact API Tests", () => {
   it("POST /contact should send a contact message via email", async () => {
-    await api
+    const response = await api
       .post("/contact")
       .send(initialMessage)
       .expect(200)
       .expect("Content-Type", /json/);
-    expect.objectContaining({ email: "test@example.com" });
+    expect(response.body).toEqual(
+      expect.objectContaining({
+        success: true,
+      })
+    );
   });
 });
 
