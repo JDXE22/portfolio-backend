@@ -3,16 +3,19 @@ import { ContactMessage } from "../domain/contactMessage";
 import { GMAIL_USER } from "../../shared/config.env";
 import { NextFunction } from "express";
 
-
 export async function sendContact(
   data: ContactMessage,
-  next: NextFunction
+  next: NextFunction,
+  files?: Express.Multer.File[],
 ): Promise<boolean> {
-  const mailAttachments =data.attachments?.map((attachment) => ({
-    filename: attachment.originalname,
-    content: attachment.buffer,
-    contentType: attachment.mimetype,
-  }))
+  
+  const mailAttachments = files?.map((file) => ({
+    filename: file.originalname,
+    content: file.buffer,
+    contentType: file.mimetype,
+  })) || [];
+
+  
 
   const { name, email, subject, message, cc, bcc } = data;
   const html = `
@@ -25,13 +28,12 @@ export async function sendContact(
     `;
 
   try {
-    await sendEmailRouter(
-      {
-        to: GMAIL_USER,
-        subject: `Portfolio Contact: ${subject}`,
-        html,
-        attachments: mailAttachments,
-      });
+    await sendEmailRouter({
+      to: GMAIL_USER,
+      subject: `Portfolio Contact: ${subject}`,
+      html,
+      attachments: mailAttachments,
+    });
     return true;
   } catch (error) {
     next(error);
