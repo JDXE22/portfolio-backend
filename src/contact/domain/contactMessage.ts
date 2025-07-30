@@ -5,4 +5,9 @@ export interface ContactMessage {
     message: string;
     cc?: string;
     bcc?: string;
+    attachments?: Array<{
+        originalname: string;
+        buffer: Buffer;
+        mimetype: string;
+    }>;
 }

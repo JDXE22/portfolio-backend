@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "nodemon src/index.ts",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "testEmail": "jest src/contact/adapters/contact.test.ts"
   },
   "repository": {
     "type": "git",
@@ -25,12 +26,14 @@
     "express": "5.1.0",
     "mongodb": "6.17.0",
     "mongoose": "8.16.3",
+    "multer": "2.0.2",
     "nodemailer": "7.0.5",
     "nodemon": "3.1.10"
   },
   "devDependencies": {
     "@types/express": "5.0.3",
     "@types/jest": "30.0.0",
+    "@types/multer": "2.0.0",
     "@types/node": "24.0.13",
     "@types/nodemailer": "6.4.17",
     "@types/supertest": "6.0.3",

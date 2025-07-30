@@ -1,14 +1,14 @@
-import "dotenv/config";
 import supertest from "supertest";
 import { httpServer, server } from "../../server";
 import { ProjectModel } from "./project.model";
 import { initialProject } from "../../../tests/helpers/testHelper";
 import mongoose from "mongoose";
+import { MONGO_TEST_URI } from "../../shared/config.env";
 
 const api = supertest(server);
 
 beforeAll(async () => {
-  const mongoUri = process.env.MONGO_TEST_URI;
+  const mongoUri = MONGO_TEST_URI;
   if (!mongoUri) {
     throw new Error("MONGO_TEST_URI environment variable is not defined.");
   }
