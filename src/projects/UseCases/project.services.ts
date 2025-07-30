@@ -1,5 +1,5 @@
 import { DifficultyLevel, LiveStatus } from "../../shared/types";
-import { ProjectModel } from "../Adapters/project.model";
+import { ProjectModel } from "../adapters/project.model";
 import { IProject } from "../Domain/project.domain";
 
 export const listProjects = async (): Promise<IProject[]> => {
