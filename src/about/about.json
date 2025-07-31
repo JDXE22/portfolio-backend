@@ -10,20 +10,62 @@
     "Analytical Thinking"
   ],
   "techStack": [
-    "TypeScript",
-    "Express",
-    "MongoDB",
-    "Node.js",
-    "PostgreSQL",
-    "JavaScript",
-    "SQL",
-    "React",
-    "REST APIs",
-    "Docker",
-    "AWS Cloud",
-    "NestJS",
-    "Stripe",
-    "Nodemailer"
+    {
+      "name": "TypeScript",
+      "icon": "typescript"
+    },
+    {
+      "name": "Express",
+      "icon": "express"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "mongodb"
+    },
+    {
+      "name": "Node.js",
+      "icon": "nodejs"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "postgresql"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "javascript"
+    },
+    {
+      "name": "SQL",
+      "icon": "sql"
+    },
+    {
+      "name": "React",
+      "icon": "react"
+    },
+    {
+      "name": "REST APIs",
+      "icon": "rest"
+    },
+    {
+      "name": "Docker",
+      "icon": "docker"
+    },
+    {
+      "name": "AWS Cloud",
+      "icon": "aws"
+    },
+    {
+      "name": "NestJS",
+      "icon": "nestjs"
+    },
+    {
+      "name": "Stripe",
+      "icon": "stripe"
+    },
+    {
+      "name": "Nodemailer",
+      "icon": "nodemailer"
+    }
   ],
   "socialLinks": [
     { "name": "GitHub", "url": "https://github.com/JDXE22" },
