@@ -10,3 +10,9 @@ export enum DifficultyLevel {
     MEDIUM="Medium",
     HARD="Hard",
 }
+
+export interface SocialLink {
+    name: string;
+    url?: string;
+    username?: string;
+}
