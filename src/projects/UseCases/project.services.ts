@@ -1,6 +1,6 @@
 import { DifficultyLevel, LiveStatus } from "../../shared/types";
-import { ProjectModel } from "../Adapters/project.model";
-import { IProject } from "../Domain/project.domain";
+import { ProjectModel } from "../adapters/project.model";
+import { IProject } from "../domain/project.domain";
 
 export const listProjects = async (): Promise<IProject[]> => {
   const projects = await ProjectModel.find().lean().exec();

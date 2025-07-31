@@ -1,0 +1,86 @@
+{
+  "headline": "👋 Hi, I’m David Esparza",
+  "bio": "I’m a Full‑Stack developer specializing in backend systems. I love building scalable applications and exploring new technologies. I always strive to write clean, maintainable code and enjoy collaborating with others to create innovative solutions. In my free time, I study new design patters and work on personal projects. When I'm not coding, I enjoy working out, watching MMA or boxing and listening to music. Feel free to connect with me on social media or by using the contact form in my portfolio. I’m always open to new opportunities and collaborations!",
+  "avatarUrl": "/images/avatar.jpg",
+  "skills": [
+    "Team player",
+    "Problem Solver",
+    "Adaptable",
+    "Detail-oriented",
+    "Analytical Thinking"
+  ],
+  "techStack": [
+    {
+      "name": "TypeScript",
+      "icon": "typescript"
+    },
+    {
+      "name": "Express",
+      "icon": "express"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "mongodb"
+    },
+    {
+      "name": "Node.js",
+      "icon": "nodejs"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "postgresql"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "javascript"
+    },
+    {
+      "name": "SQL",
+      "icon": "sql"
+    },
+    {
+      "name": "React",
+      "icon": "react"
+    },
+    {
+      "name": "REST APIs",
+      "icon": "rest"
+    },
+    {
+      "name": "Docker",
+      "icon": "docker"
+    },
+    {
+      "name": "AWS Cloud",
+      "icon": "aws"
+    },
+    {
+      "name": "NestJS",
+      "icon": "nestjs"
+    },
+    {
+      "name": "Stripe",
+      "icon": "stripe"
+    },
+    {
+      "name": "Nodemailer",
+      "icon": "nodemailer"
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "Full‑Stack Developer - Data Modeling and Storage / Database Management",
+      "institution": "Soy Henry Bootcamp",
+      "duration": "2024 - 2025"
+    }
+  ],
+  "socialLinks": [
+    { "name": "GitHub", "url": "https://github.com/JDXE22" },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/juan-david-esparza-castillo/"
+    },
+    { "name": "Discord", "username": "juandavid_35956" }
+  ]
+}

@@ -12,6 +12,18 @@ const errorMap: Record<string, ErrorDefinition> = {
   NotFoundError: { status: 404, getMessage: () => "resource not found" },
   ForbiddenError: { status: 403, getMessage: () => "forbidden" },
   UnauthorizedError: { status: 401, getMessage: () => "unauthorized" },
+  MongoServerError: {
+    status: 400,
+    getMessage: (err) => `MongoDB error: ${err.message}`,
+  },
+  ConflictError: { status: 409, getMessage: (err) => `Conflict: ${err.message}` },
+  InternalServerError: { status: 500, getMessage: () => "internal server error" },
+  BadRequestError: { status: 400, getMessage: (err) => `Bad request: ${err.message}` }, 
+  DuplicateKeyError: {
+    status: 400,
+    getMessage: (err) => `Duplicate key error: ${err.message}`,
+  },
+
   default: { status: 500, getMessage: (err) => err.message },
 };
 
@@ -23,7 +35,6 @@ export const errorHandler: ErrorRequestHandler = (
 ) => {
   console.error(error);
   if (
-    (error as any).name === "MongoServerError" &&
     (error as any).code === 11000
   ) {
     return res.status(400).json({ error: error.message });
