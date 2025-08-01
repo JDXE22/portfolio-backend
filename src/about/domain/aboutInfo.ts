@@ -1,11 +1,13 @@
+import { Education, SocialLink, TechStack } from "../../shared/types"
+
 export interface AboutInfo {
     headline: string
     bio: string,
     avatarUrl: string,
     skills: string[],
-    techStack: {name: string, icon: string}[],
+    techStack: TechStack[],
     experience?: {title: string, company: string, duration: string}[],
-    education: {degree: string, institution: string, duration: string}[],
+    education: Education[],
     certifications?: {title: string, issuer: string, date: string}[],
-    socialLinks: {name: string, url: string}[]
+    socialLinks: SocialLink[]
 }
