@@ -3,11 +3,14 @@ import { getAbout } from "../useCases/getAbout";
 
 export const aboutRouter = Router();
 
-aboutRouter.get("/", async (req: Request, res: Response, next: NextFunction) => {
+aboutRouter.get(
+  "/",
+  async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const aboutInfo = await getAbout();
-        res.status(200).json(aboutInfo);
+      const aboutInfo = await getAbout();
+      res.status(200).json(aboutInfo);
     } catch (error) {
-        next(error);
+      next(error);
     }
-})
+  }
+);
