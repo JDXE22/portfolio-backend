@@ -1,4 +1,4 @@
-import { sendEmailRouter } from "../../shared/emailService";
+import { sendEmailRouter } from "../../shared/adapters/emailService";
 import { ContactMessage } from "../domain/contactMessage";
 import { GMAIL_USER } from "../../shared/config.env";
 import { NextFunction } from "express";

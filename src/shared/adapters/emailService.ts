@@ -1,5 +1,5 @@
 import nodemailer, { SendMailOptions } from "nodemailer";
-import { GMAIL_HOST, GMAIL_PASS, GMAIL_PORT, GMAIL_USER } from "./config.env";
+import { GMAIL_HOST, GMAIL_PASS, GMAIL_PORT, GMAIL_USER } from "../config.env";
 
 if (!GMAIL_HOST || !GMAIL_USER || !GMAIL_PASS || !GMAIL_PORT) {
   throw new Error("Gmail configuration is not properly set in environment variables.");
