@@ -15,11 +15,12 @@ export interface SocialLink {
   name: string;
   url?: string;
   username?: string;
+  iconPublicId: string
 }
 
 export interface TechStack {
   name: string;
-  icon: string;
+  iconPublicId: string;
 }
 
 export interface Education {
