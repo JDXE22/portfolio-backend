@@ -7,7 +7,8 @@
     "build": "tsc",
     "start": "nodemon src/index.ts",
     "test": "jest --watchAll",
-    "testEmail": "jest src/contact/adapters/contact.test.ts"
+    "testEmail": "jest src/contact/adapters/contact.test.ts",
+    "testAbout": "jest src/about/adapters/about.test.ts"
   },
   "repository": {
     "type": "git",

@@ -9,6 +9,6 @@ cloudinary.config({
 
 export const CloudinaryAdapter = {
     url: (publicId: string, options?: Record<string, any>) => {
-        cloudinary.url(publicId, options)
+        return cloudinary.url(publicId, options)
     }
 }
