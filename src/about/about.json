@@ -1,7 +1,7 @@
 {
   "headline": "👋 Hi, I’m David Esparza",
   "bio": "I’m a Full‑Stack developer specializing in backend systems. I love building scalable applications and exploring new technologies. I always strive to write clean, maintainable code and enjoy collaborating with others to create innovative solutions. In my free time, I study new design patters and work on personal projects. When I'm not coding, I enjoy working out, watching MMA or boxing and listening to music. Feel free to connect with me on social media or by using the contact form in my portfolio. I’m always open to new opportunities and collaborations!",
-  "avatarUrl": "/images/avatar.jpg",
+  "avatarIconUrl": "/images/avatar.jpg",
   "skills": [
     "Team player",
     "Problem Solver",
@@ -12,60 +12,70 @@
   "techStack": [
     {
       "name": "TypeScript",
-      "icon": "typescript"
+      "iconPublicId": "typescript"
     },
     {
       "name": "Express",
-      "icon": "express"
+      "iconPublicId": "express"
     },
     {
       "name": "MongoDB",
-      "icon": "mongodb"
+      "iconPublicId": "mongodb"
     },
     {
       "name": "Node.js",
-      "icon": "nodejs"
+      "iconPublicId": "nodejs"
     },
     {
       "name": "PostgreSQL",
-      "icon": "postgresql"
+      "iconPublicId": "postgresql"
     },
     {
       "name": "JavaScript",
-      "icon": "javascript"
+      "iconPublicId": "javascript"
     },
     {
       "name": "SQL",
-      "icon": "sql"
+      "iconPublicId": "sql"
     },
     {
       "name": "React",
-      "icon": "react"
-    },
-    {
-      "name": "REST APIs",
-      "icon": "rest"
+      "iconPublicId": "react"
     },
     {
       "name": "Docker",
-      "icon": "docker"
+      "iconPublicId": "docker"
     },
     {
       "name": "AWS Cloud",
-      "icon": "aws"
+      "iconPublicId": "aws"
     },
     {
       "name": "NestJS",
-      "icon": "nestjs"
+      "iconPublicId": "nestjs"
     },
     {
       "name": "Stripe",
-      "icon": "stripe"
+      "iconPublicId": "stripe"
     },
     {
       "name": "Nodemailer",
-      "icon": "nodemailer"
+      "iconPublicId": "nodemailer"
+    },
+    {
+      "name": "HTML5",
+      "iconPublicId": "html5"
+    },
+    {
+      "name": "CSS3",
+      "iconPublicId": "css3"
+    },
+    {
+      "name": "Tailwind",
+      "iconPublicId": "tailwindcss"
     }
+
+
   ],
 
   "education": [
@@ -76,11 +86,20 @@
     }
   ],
   "socialLinks": [
-    { "name": "GitHub", "url": "https://github.com/JDXE22" },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/JDXE22",
+      "iconPublicId": "github"
+    },
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/juan-david-esparza-castillo/"
+      "url": "https://www.linkedin.com/in/juan-david-esparza-castillo/",
+      "iconPublicId": "linkedin"
     },
-    { "name": "Discord", "username": "juandavid_35956" }
+    {
+      "name": "Discord",
+      "username": "juandavid_35956",
+      "iconPublicId": "discord"
+    }
   ]
 }
