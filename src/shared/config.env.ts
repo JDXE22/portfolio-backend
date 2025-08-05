@@ -14,4 +14,10 @@ export const GMAIL_PORT = process.env.GMAIL_PORT
 
 export const MONGO_TEST_URI = process.env.MONGO_TEST_URI
 
+export const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME
+
+export const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY
+
+export const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET
+
 
