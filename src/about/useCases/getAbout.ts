@@ -11,9 +11,7 @@ export async function getAbout(): Promise<AboutInfo> {
       crop: "fill",
     }),
     socialLinks: aboutData.socialLinks.map((link) => ({
-      name: link.name,
-      url: link.url,
-      username: link.username,
+      ...link,
       iconPublicId: CloudinaryAdapter.url(link.iconPublicId),
     })),
     techStack: aboutData.techStack.map((tech) => ({
