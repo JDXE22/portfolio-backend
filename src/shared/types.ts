@@ -45,4 +45,5 @@ export const ICONS: Record<string, string> = {
   HTML5: "html5",
   CSS3: "css3",
   Tailwind: "tailwindcss",
+  Swagger: "swagger",
 }
