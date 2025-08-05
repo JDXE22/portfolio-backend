@@ -5,13 +5,8 @@ export async function getAbout(): Promise<AboutInfo> {
     ...aboutData,
     socialLinks: aboutData.socialLinks.map((link) => ({
       name: link.name,
-<<<<<<< HEAD
-      url: link.url || undefined,
-      username: link.username || undefined,
-=======
       url: link.url,
       username: link.username,
->>>>>>> about
     })),
   };
 }
