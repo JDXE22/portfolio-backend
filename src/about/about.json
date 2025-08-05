@@ -73,6 +73,10 @@
     {
       "name": "Tailwind",
       "iconPublicId": "tailwindcss"
+    },
+    {
+      "name": "Swagger",
+      "iconPublicId": "swagger"
     }
 
 
