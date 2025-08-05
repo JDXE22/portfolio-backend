@@ -5,6 +5,11 @@ import { ICONS } from "../../shared/types";
 export async function getAbout(): Promise<AboutInfo> {
   return {
     ...aboutData,
+    avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarIconUrl, {
+      width: 150,
+      height: 150,
+      crop: "fill",
+    }),
     socialLinks: aboutData.socialLinks.map((link) => ({
       name: link.name,
       url: link.url,
