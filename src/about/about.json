@@ -43,10 +43,6 @@
       "iconPublicId": "react"
     },
     {
-      "name": "REST APIs",
-      "iconPublicId": "rest"
-    },
-    {
       "name": "Docker",
       "iconPublicId": "docker"
     },
@@ -65,7 +61,21 @@
     {
       "name": "Nodemailer",
       "iconPublicId": "nodemailer"
+    },
+    {
+      "name": "HTML5",
+      "iconPublicId": "html5"
+    },
+    {
+      "name": "CSS3",
+      "iconPublicId": "css3"
+    },
+    {
+      "name": "Tailwind CSS",
+      "iconPublicId": "tailwindcss"
     }
+
+
   ],
 
   "education": [

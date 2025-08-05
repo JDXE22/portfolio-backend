@@ -18,8 +18,7 @@ export interface SocialLink {
   iconPublicId: string
 }
 
-export interface TechStack {
-  name: string;
+export interface TechStack extends SocialLink {
   iconPublicId: string;
 }
 
@@ -27,4 +26,21 @@ export interface Education {
   degree: string;
   institution: string;
   duration: string;
+}
+
+export const ICONS: Record<string, string> = {
+  TypeScript: "typescript",
+  JavaScript: "javascript",
+  React: "react",
+  NodeJS: "nodejs",
+  Express: "express",
+  MongoDB: "mongodb",
+  PostgreSQL: "postgresql",
+  Docker: "docker",
+  SQL: "sql",
+  AWS: "aws",
+  NestJS: "nestjs",
+  Stripe: "stripe",
+  Nodemailer: "nodemailer",
+  HTML5: "html5",
 }
