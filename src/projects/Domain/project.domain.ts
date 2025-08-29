@@ -1,4 +1,4 @@
-import { DifficultyLevel, LiveStatus } from "../../shared/types";
+import { DifficultyLevel, LiveStatus } from "@/shared/types";
 
 export interface IProject {
   id: string;

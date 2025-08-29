@@ -1,7 +1,7 @@
-import { AboutInfo } from "../domain/aboutInfo";
-import aboutData from "../about.json";
-import { CloudinaryAdapter } from "../../shared/adapters/cloudinary.config";
-import { ICONS } from "../../shared/types";
+import { AboutInfo } from "@/about/domain/aboutInfo";
+import aboutData from "@/about/about.json";
+import { CloudinaryAdapter } from "@/shared/adapters/cloudinary.config";
+import { ICONS } from "@/shared/types";
 export async function getAbout(): Promise<AboutInfo> {
   return {
     ...aboutData,

@@ -1,11 +1,11 @@
 import { jest } from "@jest/globals";
-jest.mock("../useCases/sendContact", () => ({
+jest.mock("@/contact/useCases/sendContact", () => ({
   sendContact: jest.fn<() => Promise<boolean>>().mockResolvedValue(true),
 }));
 import supertest from "supertest";
-import { httpServer } from "../../server";
+import { httpServer } from "@/server";
 import mongoose from "mongoose";
-import { MONGO_TEST_URI } from "../../shared/config.env";
+import { MONGO_TEST_URI } from "@/shared/config.env";
 import { initialMessage } from "../../../tests/helpers/testHelper";
 
 const api = supertest(httpServer);

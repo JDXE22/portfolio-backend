@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import { MONGO_URI } from "./shared/config.env";
+import { MONGO_URI } from "@/shared/config.env";
+
 export async function connectToDatabase(): Promise<void> {
   if (!MONGO_URI) {
     throw new Error("MONGO_URI is not defined.");
