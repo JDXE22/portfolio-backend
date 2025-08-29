@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "nodemon src/index.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "nodemon src/index.ts",
+    "start": "node dist/index.js",
     "test": "jest --watchAll",
     "testEmail": "jest src/contact/adapters/contact.test.ts",
     "testAbout": "jest src/about/adapters/about.test.ts"
