@@ -1,14 +1,14 @@
-import { DifficultyLevel, LiveStatus } from "../../shared/types"
+import { DifficultyLevel, LiveStatus } from "../../shared/types.ts";
 
 export interface IProject {
-    id: string
-    title: string
-    description: string
-    techStack: string[]
-    imgUrl?:string
-    repoUrl?: string
-    liveUrl?: string
-    liveStatus: LiveStatus
-    difficultyLevel: DifficultyLevel
-    reasoning: string
+  id: string;
+  title: string;
+  description: string;
+  techStack: string[];
+  imgUrl?: string;
+  repoUrl?: string;
+  liveUrl?: string;
+  liveStatus: LiveStatus;
+  difficultyLevel: DifficultyLevel;
+  reasoning: string;
 }

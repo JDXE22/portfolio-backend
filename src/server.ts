@@ -1,9 +1,9 @@
 import express from "express";
-import { projectRouter } from "./projects/adapters/project.router";
-import { errorHandler } from "./shared/error.handler";
+import { projectRouter } from "./projects/adapters/project.router.ts";
+import { errorHandler } from "./shared/error.handler.ts";
 import http from "http";
-import { contactRouter } from "./contact/adapters/contact.router";
-import { aboutRouter } from "./about/adapters/about.router";
+import { contactRouter } from "./contact/adapters/contact.router.ts";
+import { aboutRouter } from "./about/adapters/about.router.ts";
 
 export const server = express();
 
