@@ -2,8 +2,9 @@ import nodemailer, { SendMailOptions } from "nodemailer";
 import { GMAIL_HOST, GMAIL_PASS, GMAIL_PORT, GMAIL_USER } from "../config.env";
 
 if (!GMAIL_HOST || !GMAIL_USER || !GMAIL_PASS || !GMAIL_PORT) {
-  throw new Error("Gmail configuration is not properly set in environment variables.");
-  
+  throw new Error(
+    "Gmail configuration is not properly set in environment variables."
+  );
 }
 
 export const EmailService: nodemailer.Transporter = nodemailer.createTransport({
@@ -17,7 +18,7 @@ export const EmailService: nodemailer.Transporter = nodemailer.createTransport({
 });
 
 export async function sendEmailRouter(
-  options: Omit<SendMailOptions, "from">,
+  options: Omit<SendMailOptions, "from">
 ): Promise<void> {
   try {
     await EmailService.sendMail({

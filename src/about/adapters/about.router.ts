@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { getAbout } from "../useCases/getAbout.ts";
+import { getAbout } from "../useCases/getAbout";
 
 export const aboutRouter = Router();
 

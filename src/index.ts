@@ -1,6 +1,6 @@
-import { connectToDatabase } from "./db.ts";
-import { server } from "./server.ts";
-import { PORT } from "./shared/config.env.ts";
+import { connectToDatabase } from "./db";
+import { server } from "./server";
+import { PORT } from "./shared/config.env";
 import mongoose from "mongoose";
 
 async function startServer(): Promise<void> {

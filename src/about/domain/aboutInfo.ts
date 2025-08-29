@@ -1,4 +1,4 @@
-import { Education, SocialLink, TechStack } from "../../shared/types.ts";
+import { Education, SocialLink, TechStack } from "../../shared/types";
 
 export interface AboutInfo {
   headline: string;
