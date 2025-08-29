@@ -1,14 +1,14 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { getAbout } from "@/about/useCases/getAbout";
+import { listProjects } from "../useCases/project.services";
 
-export const aboutRouter = Router();
+export const projectRouter = Router();
 
-aboutRouter.get(
+projectRouter.get(
   "/",
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const aboutInfo = await getAbout();
-      res.status(200).json(aboutInfo);
+      const projects = await listProjects();
+      res.status(200).json(projects);
     } catch (error) {
       next(error);
     }

@@ -1,5 +1,5 @@
 import supertest from "supertest";
-import { httpServer } from "../../server";
+import { httpServer } from "@/server";
 
 const api = supertest(httpServer);
 

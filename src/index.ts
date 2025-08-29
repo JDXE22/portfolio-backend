@@ -1,6 +1,6 @@
-import { connectToDatabase } from "./db";
-import { server } from "./server";
-import { PORT } from "./shared/config.env";
+import { connectToDatabase } from "@/db";
+import { server } from "@/server";
+import { PORT } from "@/shared/config.env";
 import mongoose from "mongoose";
 
 async function startServer(): Promise<void> {
