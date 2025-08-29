@@ -1,6 +1,6 @@
-import { sendEmailRouter } from "../../shared/adapters/emailService.ts";
-import { ContactMessage } from "../domain/contactMessage.ts";
-import { GMAIL_USER } from "../../shared/config.env.ts";
+import { sendEmailRouter } from "../../shared/adapters/emailService";
+import { ContactMessage } from "../domain/contactMessage";
+import { GMAIL_USER } from "../../shared/config.env";
 import { NextFunction } from "express";
 
 export async function sendContact(

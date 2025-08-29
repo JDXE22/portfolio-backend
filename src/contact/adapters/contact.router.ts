@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { sendContact } from "../useCases/sendContact.ts";
+import { sendContact } from "../useCases/sendContact";
 import multer from "multer";
 
 const upload = multer();

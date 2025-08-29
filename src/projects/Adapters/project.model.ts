@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import { DifficultyLevel, LiveStatus } from "../../shared/types.ts";
-import { IProject } from "../domain/project.domain.ts";
+import { DifficultyLevel, LiveStatus } from "../../shared/types";
+import { IProject } from "../domain/project.domain";
 
 const projectSchema = new Schema<IProject>({
   title: {
