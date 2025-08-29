@@ -1,21 +1,19 @@
-import { sendEmailRouter } from "../../shared/adapters/emailService";
-import { ContactMessage } from "../domain/contactMessage";
-import { GMAIL_USER } from "../../shared/config.env";
+import { sendEmailRouter } from "../../shared/adapters/emailService.ts";
+import { ContactMessage } from "../domain/contactMessage.ts";
+import { GMAIL_USER } from "../../shared/config.env.ts";
 import { NextFunction } from "express";
 
 export async function sendContact(
   data: ContactMessage,
   next: NextFunction,
-  files?: Express.Multer.File[],
+  files?: Express.Multer.File[]
 ): Promise<boolean> {
-  
-  const mailAttachments = files?.map((file) => ({
-    filename: file.originalname,
-    content: file.buffer,
-    contentType: file.mimetype,
-  })) || [];
-
-  
+  const mailAttachments =
+    files?.map((file) => ({
+      filename: file.originalname,
+      content: file.buffer,
+      contentType: file.mimetype,
+    })) || [];
 
   const { name, email, subject, message, cc, bcc } = data;
   const html = `
