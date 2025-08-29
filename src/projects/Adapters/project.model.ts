@@ -1,4 +1,6 @@
 import mongoose, { Schema } from "mongoose";
+import type { HydratedDocument } from "mongoose";
+
 import { DifficultyLevel, LiveStatus } from "../../shared/types";
 import { IProject } from "../domain/project.domain";
 
@@ -42,7 +44,9 @@ const projectSchema = new Schema<IProject>({
   },
 });
 
-projectSchema.virtual("id").get(function () {
+type ProjectDoc = HydratedDocument<IProject>;
+
+projectSchema.virtual("id").get(function (this: ProjectDoc) {
   return this._id.toHexString();
 });
 projectSchema.set("toJSON", {
