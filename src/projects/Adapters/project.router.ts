@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { listProjects } from "../useCases/project.services";
+import { listProjects } from "../useCases/project.services.ts";
 
 export const projectRouter = Router();
 
