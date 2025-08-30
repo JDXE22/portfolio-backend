@@ -1,0 +1,106 @@
+{
+    "headline": "👋 Hi, I’m David Esparza",
+    "bio": "I’m a Full‑Stack developer specializing in backend systems. I love building scalable applications and exploring new technologies. I always strive to write clean, maintainable code and enjoy collaborating with others to create innovative solutions. In my free time, I study new design patters and work on personal projects. When I'm not coding, I enjoy working out, watching MMA or boxing and listening to music. Feel free to connect with me on social media or by using the contact form in my portfolio. I’m always open to new opportunities and collaborations!",
+    "avatarIconUrl": "/images/avatar.jpg",
+    "skills": [
+        "Team player",
+        "Problem Solver",
+        "Adaptable",
+        "Detail-oriented",
+        "Analytical Thinking"
+    ],
+    "techStack": [
+        {
+            "name": "TypeScript",
+            "iconPublicId": "typescript"
+        },
+        {
+            "name": "Express",
+            "iconPublicId": "express"
+        },
+        {
+            "name": "MongoDB",
+            "iconPublicId": "mongodb"
+        },
+        {
+            "name": "Node.js",
+            "iconPublicId": "nodejs"
+        },
+        {
+            "name": "PostgreSQL",
+            "iconPublicId": "postgresql"
+        },
+        {
+            "name": "JavaScript",
+            "iconPublicId": "javascript"
+        },
+        {
+            "name": "SQL",
+            "iconPublicId": "sql"
+        },
+        {
+            "name": "React",
+            "iconPublicId": "react"
+        },
+        {
+            "name": "Docker",
+            "iconPublicId": "docker"
+        },
+        {
+            "name": "AWS Cloud",
+            "iconPublicId": "aws"
+        },
+        {
+            "name": "NestJS",
+            "iconPublicId": "nestjs"
+        },
+        {
+            "name": "Stripe",
+            "iconPublicId": "stripe"
+        },
+        {
+            "name": "Nodemailer",
+            "iconPublicId": "nodemailer"
+        },
+        {
+            "name": "HTML5",
+            "iconPublicId": "html5"
+        },
+        {
+            "name": "CSS3",
+            "iconPublicId": "css3"
+        },
+        {
+            "name": "Tailwind",
+            "iconPublicId": "tailwindcss"
+        },
+        {
+            "name": "Swagger",
+            "iconPublicId": "swagger"
+        }
+    ],
+    "education": [
+        {
+            "degree": "Full‑Stack Developer - Data Modeling and Storage / Database Management",
+            "institution": "Soy Henry Bootcamp",
+            "duration": "2024 - 2025"
+        }
+    ],
+    "socialLinks": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/JDXE22",
+            "iconPublicId": "github"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/juan-david-esparza-castillo/",
+            "iconPublicId": "linkedin"
+        },
+        {
+            "name": "Discord",
+            "username": "juandavid_35956",
+            "iconPublicId": "discord"
+        }
+    ]
+}
