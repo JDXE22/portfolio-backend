@@ -1,6 +1,6 @@
-import { DifficultyLevel, LiveStatus } from "../../shared/types";
-import { ProjectModel } from "../adapters/project.model";
-import { IProject } from "../domain/project.domain";
+import { DifficultyLevel, LiveStatus } from "@/shared/types";
+import { ProjectModel } from "@/adapters/project.model";
+import { IProject } from "@/domain/project.domain";
 
 type ProjectLean = Omit<IProject, "id"> & { _id: unknown; __v?: number };
 
