@@ -46,6 +46,14 @@ describe("About API Tests", () => {
         }),
       ])
     );
+    expect(about.socialLinks).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          name: expect.any(String),
+          iconPublicId: expect.stringMatching(/^https?:\/\//),
+        }),
+      ])
+    );
   });
 });
 
