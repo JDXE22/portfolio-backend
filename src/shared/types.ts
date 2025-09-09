@@ -12,17 +12,17 @@ export enum DifficultyLevel {
 }
 
 export interface SocialLink {
-  name: string;
+  name?: string;
   url?: string;
   username?: string;
-  iconPublicId: string
+  iconPublicId: string;
 }
 
 export interface TechStack extends SocialLink {
   iconPublicId: string;
 }
 
-export interface Education {
+export interface Education extends SocialLink {
   degree: string;
   institution: string;
   duration: string;
@@ -46,4 +46,4 @@ export const ICONS: Record<string, string> = {
   CSS3: "css3",
   Tailwind: "tailwindcss",
   Swagger: "swagger",
-}
+};
