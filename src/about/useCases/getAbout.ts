@@ -22,6 +22,13 @@ export async function getAbout(): Promise<AboutInfo[]> {
         height: 32,
       }),
     })),
+    education: aboutData.education.map((edu) => ({
+      ...edu,
+      iconPublicId: CloudinaryAdapter.url("education", {
+        width: 32,
+        height: 32,
+      }),
+    })),
   };
   return [normalized];
 }
