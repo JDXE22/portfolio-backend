@@ -1,25 +1,30 @@
 import supertest from "supertest";
-import { httpServer } from "@/server";
+import { httpServer } from "../../server";
 
 const api = supertest(httpServer);
 
 describe("About API Tests", () => {
-  it("GET /about should return about information", async () => {
+  it("GET /about should return about information (as array)", async () => {
     const response = await api
       .get("/about")
       .expect(200)
       .expect("Content-Type", /json/);
 
-    expect(response.body).toMatchObject({
+    expect(Array.isArray(response.body)).toBe(true);
+    expect(response.body.length).toBeGreaterThan(0);
+
+    const about = response.body[0];
+
+    expect(about).toMatchObject({
       headline: expect.any(String),
       bio: expect.any(String),
       avatarIconUrl: expect.stringMatching(
         /^https:\/\/res\.cloudinary\.com\/.+$/
       ),
     });
-    expect(response.body.socialLinks).toBeInstanceOf(Array);
 
-    expect(response.body.socialLinks).toEqual(
+    expect(Array.isArray(about.socialLinks)).toBe(true);
+    expect(about.socialLinks).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
           name: expect.any(String),
@@ -29,9 +34,9 @@ describe("About API Tests", () => {
         }),
       ])
     );
-    expect(response.body.techStack).toBeInstanceOf(Array);
 
-    expect(response.body.techStack).toEqual(
+    expect(Array.isArray(about.techStack)).toBe(true);
+    expect(about.techStack).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
           name: expect.any(String),
