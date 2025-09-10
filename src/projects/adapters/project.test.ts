@@ -1,7 +1,11 @@
 import supertest from "supertest";
 import { httpServer, server } from "../../server";
 import { ProjectModel } from "./project.model";
-import { initialProject } from "../../../tests/helpers/testHelper";
+import {
+  initialProject,
+  projectPayload,
+  expectProjectMatches,
+} from "../../../tests/helpers/testHelper";
 import mongoose from "mongoose";
 import { MONGO_TEST_URI } from "../../shared/config.env";
 
@@ -39,29 +43,19 @@ describe("Project API Tests", () => {
   // it("GET /projects/:id should return a specific project by ID", async () => {})
 
   it("POST /projects should create a new project", async () => {
-    const newProject = {
-      title: "New Project",
-      description: "A description of the new project",
-      liveUrl: "http://example.com/new-project",
-      imgUrl: "http://example.com/new-project.jpg",
-      techStack: ["Node.js", "Express"],
-      difficultyLevel: "Medium",
-      reasoning: "To learn new technologies",
-    };
-    const response = await api
+    const payload = projectPayload();
+    const countBefore = await ProjectModel.countDocuments();
+
+    const { body } = await api
       .post("/projects")
-      .send(newProject)
+      .send(payload)
       .expect(201)
       .expect("Content-Type", /application\/json/);
-    expect(response.body.title).toBe(newProject.title);
-    expect(response.body.description).toBe(newProject.description);
-    expect(response.body.liveUrl).toBe(newProject.liveUrl);
-    expect(response.body.imgUrl).toBe(newProject.imgUrl);
-    expect(response.body.techStack).toEqual(newProject.techStack);
-    expect(response.body.difficultyLevel).toBe(newProject.difficultyLevel);
-    expect(response.body.reasoning).toBe(newProject.reasoning);
-    const projectsAtEnd = await ProjectModel.find({});
-    expect(projectsAtEnd).toHaveLength(initialProject.length + 1);
+
+    expectProjectMatches(body, payload);
+
+    const countAfter = await ProjectModel.countDocuments();
+    expect(countAfter).toBe(countBefore + 1);
   });
 });
 

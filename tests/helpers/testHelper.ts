@@ -33,9 +33,7 @@ export const initialMessage: ContactMessage = {
   ],
 };
 
-export function projectPayload(
-  overrides?: CreateProjectDTO
-): Partial<IProject> {
+export function projectPayload(overrides?: CreateProjectDTO) {
   return {
     title: "New Project",
     description: "A description of the new project",
@@ -49,7 +47,10 @@ export function projectPayload(
   };
 }
 
-export function expectProjectMatches(body: any, payload: IProject) {
+export function expectProjectMatches(
+  body: any,
+  payload: Partial<CreateProjectDTO>
+) {
   expect(body).toMatchObject({
     title: payload.title,
     description: payload.description,
@@ -60,5 +61,5 @@ export function expectProjectMatches(body: any, payload: IProject) {
     reasoning: payload.reasoning,
     liveStatus: payload.liveStatus,
   });
-  expect(body).toHaveProperty("id");
+  expect(body).toHaveProperty("_id");
 }
