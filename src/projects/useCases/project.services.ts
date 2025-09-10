@@ -1,6 +1,6 @@
 import { DifficultyLevel, LiveStatus } from "@/shared/types";
 import { ProjectModel } from "@/projects/adapters/project.model";
-import { IProject } from "@/projects/domain/project.domain";
+import { CreateProjectDTO, IProject } from "@/projects/domain/project.domain";
 
 type ProjectLean = Omit<IProject, "id"> & { _id: unknown; __v?: number };
 
@@ -17,4 +17,13 @@ export const listProjects = async (): Promise<IProject[]> => {
       liveStatus: project.liveStatus as LiveStatus,
     })
   );
+};
+
+// export const getProjectById = async (id: string): Promise<IProject | null> => {}
+
+export const createProject = async (
+  input: CreateProjectDTO
+): Promise<IProject> => {
+  const newProject = await ProjectModel.create(input);
+  return newProject.toObject();
 };
