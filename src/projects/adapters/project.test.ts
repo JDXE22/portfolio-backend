@@ -1,7 +1,11 @@
 import supertest from "supertest";
 import { httpServer, server } from "../../server";
 import { ProjectModel } from "./project.model";
-import { initialProject } from "../../../tests/helpers/testHelper";
+import {
+  initialProject,
+  projectPayload,
+  expectProjectMatches,
+} from "../../../tests/helpers/testHelper";
 import mongoose from "mongoose";
 import { MONGO_TEST_URI } from "../../shared/config.env";
 
@@ -16,7 +20,7 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
-  await ProjectModel.deleteMany({})
+  await ProjectModel.deleteMany({});
   for (const project of initialProject) {
     await ProjectModel.create(project);
   }
@@ -35,7 +39,24 @@ describe("Project API Tests", () => {
     const response = await api.get("/projects").expect(200);
     expect(response.body).toEqual([]);
   });
-  
+
+  // it("GET /projects/:id should return a specific project by ID", async () => {})
+
+  it("POST /projects should create a new project", async () => {
+    const payload = projectPayload();
+    const countBefore = await ProjectModel.countDocuments();
+
+    const { body } = await api
+      .post("/projects")
+      .send(payload)
+      .expect(201)
+      .expect("Content-Type", /application\/json/);
+
+    expectProjectMatches(body, payload);
+
+    const countAfter = await ProjectModel.countDocuments();
+    expect(countAfter).toBe(countBefore + 1);
+  });
 });
 
 afterAll(async () => {

@@ -1,6 +1,6 @@
 import { DifficultyLevel, LiveStatus } from "@/shared/types";
 
-export interface IProject {
+export interface ProjectCore {
   id: string;
   title: string;
   description: string;
@@ -12,3 +12,13 @@ export interface IProject {
   difficultyLevel: DifficultyLevel;
   reasoning: string;
 }
+
+export interface IProject extends ProjectCore {
+  id: string;
+}
+
+export type CreateProjectDTO = ProjectCore;
+
+type MutableProjectFields = Omit<ProjectCore, "reasoning" | "difficultyLevel">;
+
+export type UpdateProjectDTO = Partial<MutableProjectFields>;

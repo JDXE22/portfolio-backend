@@ -1,6 +1,9 @@
-import { ContactMessage } from "@/contact/domain/contactMessage";
-import { IProject } from "@/projects/domain/project.domain";
-import { DifficultyLevel, LiveStatus } from "@/shared/types";
+import { ContactMessage } from "./../../src/contact/domain/contactMessage";
+import {
+  CreateProjectDTO,
+  IProject,
+} from "./../../src/projects/domain/project.domain";
+import { DifficultyLevel, LiveStatus } from "../../src/shared/types";
 import { Buffer } from "node:buffer";
 export const initialProject: IProject[] = [
   {
@@ -29,3 +32,34 @@ export const initialMessage: ContactMessage = {
     },
   ],
 };
+
+export function projectPayload(overrides?: CreateProjectDTO) {
+  return {
+    title: "New Project",
+    description: "A description of the new project",
+    liveUrl: "http://example.com/new-project",
+    imgUrl: "http://example.com/new-project.jpg",
+    techStack: ["Node.js", "Express"],
+    difficultyLevel: DifficultyLevel.MEDIUM,
+    liveStatus: LiveStatus.LIVE,
+    reasoning: "To learn new technologies",
+    ...overrides,
+  };
+}
+
+export function expectProjectMatches(
+  body: any,
+  payload: Partial<CreateProjectDTO>
+) {
+  expect(body).toMatchObject({
+    title: payload.title,
+    description: payload.description,
+    liveUrl: payload.liveUrl,
+    imgUrl: payload.imgUrl,
+    techStack: payload.techStack,
+    difficultyLevel: payload.difficultyLevel,
+    reasoning: payload.reasoning,
+    liveStatus: payload.liveStatus,
+  });
+  expect(body).toHaveProperty("_id");
+}
