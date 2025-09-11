@@ -13,11 +13,9 @@ export interface ProjectCore {
   reasoning: string;
 }
 
-export interface IProject extends ProjectCore {
-  id: string;
-}
+export interface IProject extends ProjectCore {}
 
-export type CreateProjectDTO = ProjectCore;
+export type CreateProjectDTO = Omit<ProjectCore, "id">;
 
 type MutableProjectFields = Omit<ProjectCore, "reasoning" | "difficultyLevel">;
 
