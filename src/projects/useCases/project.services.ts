@@ -15,6 +15,9 @@ export const listProjects = async (): Promise<IProject[]> => {
       reasoning: project.reasoning,
       difficultyLevel: project.difficultyLevel as DifficultyLevel,
       liveStatus: project.liveStatus as LiveStatus,
+      imgUrl: project.imgUrl,
+      repoUrl: project.repoUrl,
+      liveUrl: project.liveUrl,
     })
   );
 };
