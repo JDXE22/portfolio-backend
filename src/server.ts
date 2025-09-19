@@ -13,8 +13,6 @@ export const httpServer = http.createServer(server);
 
 server.use(cors(corsOptions));
 
-server.options("*", cors(corsOptions));
-
 server.use(express.json());
 
 server.use("/projects", projectRouter);
