@@ -20,4 +20,4 @@ export const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
 
 export const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
 
-export const CORS_ORIGIN = process.env.CORS_ORIGIN;
+export const CORS_ORIGINS = process.env.CORS_ORIGINS;
