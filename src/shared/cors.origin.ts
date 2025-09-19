@@ -1,5 +1,5 @@
 import { CorsOptions } from "cors";
-import { CORS_ORIGIN } from "./config.env";
+import { CORS_ORIGIN } from "@/shared/config.env";
 
 export const rawOrigins = (CORS_ORIGIN ?? "")
   .split(",")
