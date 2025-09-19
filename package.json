@@ -26,6 +26,7 @@
   "homepage": "https://github.com/JDXE22/portfolio-backend#readme",
   "dependencies": {
     "cloudinary": "2.7.0",
+    "cors": "2.8.5",
     "dotenv": "17.2.0",
     "express": "5.1.0",
     "mongodb": "6.17.0",
@@ -35,6 +36,7 @@
     "nodemon": "3.1.10"
   },
   "devDependencies": {
+    "@types/cors": "2.8.19",
     "@types/express": "5.0.3",
     "@types/jest": "30.0.0",
     "@types/multer": "2.0.0",
@@ -44,12 +46,12 @@
     "jest": "30.0.4",
     "jest-html-reporter": "^4.3.0",
     "morgan": "1.10.0",
+    "rimraf": "^5.0.5",
     "supertest": "7.1.3",
     "ts-jest": "29.4.0",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.16",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.8.3",
-    "rimraf": "^5.0.5"
+    "typescript": "^5.8.3"
   }
 }
