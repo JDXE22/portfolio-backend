@@ -4,10 +4,16 @@ import { errorHandler } from "@/shared/error.handler";
 import { contactRouter } from "@/contact/adapters/contact.router";
 import { aboutRouter } from "@/about/adapters/about.router";
 import http from "http";
+import cors from "cors";
+import { corsOptions } from "./shared/cors.origin";
 
 export const server = express();
 
 export const httpServer = http.createServer(server);
+
+server.use(cors(corsOptions));
+
+server.options("*", cors(corsOptions));
 
 server.use(express.json());
 
