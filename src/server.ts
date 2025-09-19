@@ -5,7 +5,7 @@ import { contactRouter } from "@/contact/adapters/contact.router";
 import { aboutRouter } from "@/about/adapters/about.router";
 import http from "http";
 import cors from "cors";
-import { corsOptions } from "./shared/cors.origin";
+import { corsOptions } from "@/shared/cors.origin";
 
 export const server = express();
 
