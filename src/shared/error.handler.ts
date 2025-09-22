@@ -7,7 +7,7 @@ import {
   MulterCode,
   MulterErrorLike,
   NamedErrorLike,
-} from "./types";
+} from "@/shared/types";
 
 /* ---------- Maps / configuration ---------- */
 
@@ -78,7 +78,10 @@ export const errorHandler: ErrorRequestHandler = (
   next: NextFunction
 ) => {
   if (isDuplicateKey(error)) {
-    return res.status(400).json({ error: "duplicate key error" });
+    const duplicateKeyError = errorMap["DuplicateKeyError"];
+    return res
+      .status(duplicateKeyError.status)
+      .json({ error: duplicateKeyError.message(error) });
   }
 
   if (isMulterError(error) && multerMap[error.code]) {
