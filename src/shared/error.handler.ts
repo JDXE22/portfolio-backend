@@ -16,9 +16,18 @@ const errorMap: Record<string, ErrorDefinition> = {
     status: 400,
     getMessage: (err) => `MongoDB error: ${err.message}`,
   },
-  ConflictError: { status: 409, getMessage: (err) => `Conflict: ${err.message}` },
-  InternalServerError: { status: 500, getMessage: () => "internal server error" },
-  BadRequestError: { status: 400, getMessage: (err) => `Bad request: ${err.message}` }, 
+  ConflictError: {
+    status: 409,
+    getMessage: (err) => `Conflict: ${err.message}`,
+  },
+  InternalServerError: {
+    status: 500,
+    getMessage: () => "internal server error",
+  },
+  BadRequestError: {
+    status: 400,
+    getMessage: (err) => `Bad request: ${err.message}`,
+  },
   DuplicateKeyError: {
     status: 400,
     getMessage: (err) => `Duplicate key error: ${err.message}`,
@@ -33,10 +42,7 @@ export const errorHandler: ErrorRequestHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  console.error(error);
-  if (
-    (error as any).code === 11000
-  ) {
+  if ((error as any).code === 11000) {
     return res.status(400).json({ error: error.message });
   }
 
