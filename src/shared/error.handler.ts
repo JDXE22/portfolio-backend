@@ -7,7 +7,7 @@ import {
   MulterCode,
   MulterErrorLike,
   NamedErrorLike,
-} from "./types";
+} from "@/shared/types";
 
 /* ---------- Maps / configuration ---------- */
 
