@@ -100,8 +100,9 @@ export const isMulterError = (error: unknown): error is MulterErrorLike => {
   if (!isObject(error)) return false;
 
   const code = (error as Record<string, unknown>)["code"];
-  if (MULTER_ERROR_CODES.has(code as MulterCode)) return false;
 
+  if (typeof code !== "string" || !MULTER_ERROR_CODES.has(code as MulterCode))
+    return false;
   const name = (error as { name?: unknown }).name;
   if (name && name !== "MulterError") return false;
 
