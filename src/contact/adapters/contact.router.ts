@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import { sendContact } from "@/contact/useCases/sendContact";
 import multer from "multer";
 
@@ -12,15 +12,19 @@ const upload = multer({
 
 export const contactRouter = Router();
 
-contactRouter.post("/", upload.array("files", 3), async (req, res, next) => {
-  try {
-    const result = await sendContact(
-      req.body,
-      next,
-      req.files as Express.Multer.File[]
-    );
-    res.status(200).json({ success: result });
-  } catch (err) {
-    next(err);
+contactRouter.post(
+  "/",
+  upload.array("files", 3),
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const result = await sendContact(
+        req.body,
+        next,
+        req.files as Express.Multer.File[]
+      );
+      res.status(200).json({ success: result });
+    } catch (err) {
+      next(err);
+    }
   }
-});
+);
