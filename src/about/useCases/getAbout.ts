@@ -1,10 +1,9 @@
 import { AboutInfo } from "@/about/domain/aboutInfo";
 import aboutData from "@/about/about.json";
 import { CloudinaryAdapter } from "@/shared/adapters/cloudinary.config";
-import { ICONS } from "@/shared/types";
 
 export async function getAbout(): Promise<AboutInfo[]> {
-  const normalized: AboutInfo = {
+  const normalized = {
     ...aboutData,
     avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarIconUrl, {
       width: 150,
@@ -17,14 +16,7 @@ export async function getAbout(): Promise<AboutInfo[]> {
     })),
     techStack: aboutData.techStack.map((tech) => ({
       ...tech,
-      iconPublicId: CloudinaryAdapter.url(ICONS[tech.name], {
-        width: 32,
-        height: 32,
-      }),
-    })),
-    education: aboutData.education.map((edu) => ({
-      ...edu,
-      iconPublicId: CloudinaryAdapter.url("education", {
+      iconPublicId: CloudinaryAdapter.url(tech.iconPublicId, {
         width: 32,
         height: 32,
       }),
