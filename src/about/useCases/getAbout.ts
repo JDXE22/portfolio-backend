@@ -3,7 +3,7 @@ import aboutData from "@/about/about.json";
 import { CloudinaryAdapter } from "@/shared/adapters/cloudinary.config";
 
 export async function getAbout(): Promise<AboutInfo[]> {
-  const normalized = {
+  const normalized: AboutInfo = {
     ...aboutData,
     avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarIconUrl, {
       width: 150,
