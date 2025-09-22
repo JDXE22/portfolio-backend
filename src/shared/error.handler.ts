@@ -1,5 +1,13 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from "express";
-import { MulterCode, MulterErrorLike, NamedErrorLike } from "./types";
+import {
+  isDuplicateKey,
+  isMulterError,
+  isNamedError,
+  isObject,
+  MulterCode,
+  MulterErrorLike,
+  NamedErrorLike,
+} from "./types";
 
 /* ---------- Maps / configuration ---------- */
 
@@ -52,22 +60,40 @@ const multerMap: Record<
   },
 };
 
+/* ---------- Fallback helpers ---------- */
+
+const extractMessage = (error: unknown): string => {
+  if (isNamedError(error)) return error.message;
+  if (isObject(error) && typeof error["message"] === "string")
+    return error["message"] as string;
+  return "Internal server error";
+};
+
+/* ---------- Error handler middleware ---------- */
+
 export const errorHandler: ErrorRequestHandler = (
   error,
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  if ((error as any).code === 11000) {
-    return res.status(400).json({ error: error.message });
+  if (isDuplicateKey(error)) {
+    return res.status(400).json({ error: "duplicate key error" });
   }
 
-  const errorDefinition = errorMap[(error as any).name] || errorMap.default;
-  if (errorDefinition) {
-    return res.status(errorDefinition.status).json({
-      error: errorDefinition.message(error),
-    });
+  if (isMulterError(error) && multerMap[error.code]) {
+    const defaultMulter = multerMap[error.code];
+    return res
+      .status(defaultMulter.status)
+      .json({ error: defaultMulter.message(error) });
   }
 
-  next(error);
+  if (isNamedError(error) && errorMap[error.name]) {
+    const defaultError = errorMap[error.name];
+    return res
+      .status(defaultError.status)
+      .json({ error: defaultError.message(error) });
+  }
+
+  return res.status(500).json({ error: extractMessage(error) });
 };
