@@ -9,5 +9,7 @@ export interface AboutInfo {
   experience?: { title: string; company: string; duration: string }[];
   education?: { degree: string; institution: string; duration: string }[];
   certifications?: Certifications[];
+  cerficateUrl: string;
+  cvUrl: string;
   socialLinks: SocialLink[];
 }
