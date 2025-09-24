@@ -21,7 +21,7 @@ export async function getAbout(): Promise<AboutInfo[]> {
         height: 32,
       }),
     })),
-    cerficateUrl: aboutData.certificateUrl,
+    certificateUrl: aboutData.certificateUrl,
     cvUrl: aboutData.cvUrl,
   };
   return [normalized];
