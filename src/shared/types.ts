@@ -29,6 +29,12 @@ export interface Education extends SocialLink {
   duration: string;
 }
 
+export interface Certifications {
+  title: string;
+  issuer: string;
+  date: string;
+}
+
 export const ICONS: Record<string, string> = {
   TypeScript: "typescript",
   JavaScript: "javascript",
