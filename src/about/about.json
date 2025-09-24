@@ -76,13 +76,16 @@
     }
   ],
 
-  "education": [
+  "certifications": [
     {
-      "degree": "Full‑Stack Developer - Data Modeling and Storage / Database Management",
-      "institution": "Soy Henry Bootcamp",
-      "duration": "2024 - 2025"
+      "title": "Full‑Stack Developer - Data Modeling and Storage / Database Management",
+      "issuer": "Soy Henry Bootcamp",
+      "date": "2024 - 2025"
     }
   ],
+
+  "certificateUrl": "/SoyHenryCertificate_Juan_David_Esparza.pdf",
+
   "socialLinks": [
     {
       "name": "GitHub",
