@@ -1,5 +1,5 @@
 {
-  "headline": "👋 Hi, I’m David Esparza",
+  "headline": "Hi, I’m David Esparza",
   "bio": "I’m a Full‑Stack developer specializing in backend systems. I love building scalable applications and exploring new technologies. I always strive to write clean, maintainable code and enjoy collaborating with others to create innovative solutions. In my free time, I study new design patters and work on personal projects. When I'm not coding, I enjoy working out, watching MMA or boxing and listening to music. Feel free to connect with me on social media or by using the contact form in my portfolio. I’m always open to new opportunities and collaborations!",
   "avatarIconUrl": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1758574877/perfil.png_nwq7el.png",
   "skills": [
@@ -40,7 +40,7 @@
     },
     {
       "name": "SQL",
-      "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339627/SQL_Developer_spfmxt.svg"
+      "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1758738789/sql-database-sql-azure-svgrepo-com_anmrvb.svg"
     },
     {
       "name": "React",
