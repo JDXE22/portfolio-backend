@@ -1,4 +1,4 @@
-import { SocialLink, TechStack } from "@/shared/types";
+import { Certifications, SocialLink, TechStack } from "@/shared/types";
 
 export interface AboutInfo {
   headline: string;
@@ -8,6 +8,8 @@ export interface AboutInfo {
   techStack: TechStack[];
   experience?: { title: string; company: string; duration: string }[];
   education?: { degree: string; institution: string; duration: string }[];
-  certifications?: { title: string; issuer: string; date: string }[];
+  certifications?: Certifications[];
+  certificateUrl: string;
+  cvUrl: string;
   socialLinks: SocialLink[];
 }
