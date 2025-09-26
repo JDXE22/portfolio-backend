@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import type { HydratedDocument } from "mongoose";
-import { DifficultyLevel, LiveStatus } from "@/shared/types";
-import { IProject } from "@/projects/domain/project.domain";
+import { DifficultyLevel, IProject, LiveStatus } from "@/shared/types";
+
 const projectSchema = new Schema<IProject>({
   title: {
     type: String,
