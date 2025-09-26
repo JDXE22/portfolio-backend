@@ -25,13 +25,6 @@ export interface IProject extends ProjectCore {}
 
 export type CreateProjectDTO = Omit<ProjectCore, "id">;
 
-export type MutableProjectFields = Omit<
-  ProjectCore,
-  "reasoning" | "difficultyLevel"
->;
-
-export type UpdateProjectDTO = Partial<MutableProjectFields>;
-
 export interface TechStack extends SocialLink {
   iconPublicId: string;
 }
