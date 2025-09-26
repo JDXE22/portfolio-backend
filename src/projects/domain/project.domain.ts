@@ -12,11 +12,3 @@ export interface ProjectCore {
   difficultyLevel: DifficultyLevel;
   reasoning: string;
 }
-
-export interface IProject extends ProjectCore {}
-
-export type CreateProjectDTO = Omit<ProjectCore, "id">;
-
-type MutableProjectFields = Omit<ProjectCore, "reasoning" | "difficultyLevel">;
-
-export type UpdateProjectDTO = Partial<MutableProjectFields>;

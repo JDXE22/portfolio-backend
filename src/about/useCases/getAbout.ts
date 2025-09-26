@@ -6,13 +6,14 @@ export async function getAbout(): Promise<AboutInfo[]> {
   const normalized: AboutInfo = {
     ...aboutData,
     avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarIconUrl, {
-      width: 150,
-      height: 150,
       crop: "fill",
     }),
     socialLinks: aboutData.socialLinks.map((link) => ({
       ...link,
-      iconPublicId: CloudinaryAdapter.url(link.iconPublicId),
+      iconPublicId: CloudinaryAdapter.url(link.iconPublicId, {
+        width: 32,
+        height: 32,
+      }),
     })),
     techStack: aboutData.techStack.map((tech) => ({
       ...tech,
@@ -21,8 +22,6 @@ export async function getAbout(): Promise<AboutInfo[]> {
         height: 32,
       }),
     })),
-    certificateUrl: aboutData.certificateUrl,
-    cvUrl: aboutData.cvUrl,
   };
   return [normalized];
 }
