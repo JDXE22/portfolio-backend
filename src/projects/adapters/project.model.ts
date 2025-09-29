@@ -42,7 +42,6 @@ const projectSchema = new Schema<IProject>({
   },
   role: {
     type: String,
-    required: true,
   }
 });
 
