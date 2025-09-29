@@ -40,6 +40,9 @@ const projectSchema = new Schema<IProject>({
     enum: Object.values(DifficultyLevel),
     required: true,
   },
+  role: {
+    type: String,
+  }
 });
 
 type ProjectDoc = HydratedDocument<IProject>;

@@ -22,6 +22,7 @@ export const listProjects = async (): Promise<IProject[]> => {
       imgUrl: project.imgUrl,
       repoUrl: project.repoUrl,
       liveUrl: project.liveUrl,
+      role: project.role
     })
   );
 };

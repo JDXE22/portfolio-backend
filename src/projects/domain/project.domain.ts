@@ -11,6 +11,7 @@ export interface ProjectCore {
   liveStatus: LiveStatus;
   difficultyLevel: DifficultyLevel;
   reasoning: string;
+  role?: string;
 }
 
 type MutableProjectFields = Omit<ProjectCore, "reasoning" | "difficultyLevel">;
