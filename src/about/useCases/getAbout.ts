@@ -7,17 +7,12 @@ export async function getAbout(): Promise<AboutInfo[]> {
     ...aboutData,
     avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarIconUrl, {
       crop: "fill",
+      width: 128,
+      height: 128,
     }),
     socialLinks: aboutData.socialLinks.map((link) => ({
       ...link,
       iconPublicId: CloudinaryAdapter.url(link.iconPublicId, {
-        width: 32,
-        height: 32,
-      }),
-    })),
-    techStack: aboutData.techStack.map((tech) => ({
-      ...tech,
-      iconPublicId: CloudinaryAdapter.url(tech.iconPublicId, {
         width: 32,
         height: 32,
       }),
