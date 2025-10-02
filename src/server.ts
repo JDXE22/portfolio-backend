@@ -6,6 +6,7 @@ import { aboutRouter } from "@/about/adapters/about.router";
 import http from "http";
 import cors from "cors";
 import { corsOptions } from "@/shared/cors.origin";
+import { stackRouterv1 } from "@/stack/adapters/stack.router";
 
 export const server = express();
 
@@ -20,5 +21,7 @@ server.use("/projects", projectRouter);
 server.use("/contact", contactRouter);
 
 server.use("/about", aboutRouter);
+
+server.use("/stack", stackRouterv1)
 
 server.use(errorHandler);
