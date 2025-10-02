@@ -3,10 +3,10 @@ import {
   DifficultyLevel,
   IProject,
   LiveStatus,
-} from "@/shared/types";
-import { ProjectModel } from "@/projects/adapters/project.model";
+} from '@/shared/types';
+import { ProjectModel } from '@/projects/adapters/project.model';
 
-type ProjectLean = Omit<IProject, "id"> & { _id: unknown; __v?: number };
+type ProjectLean = Omit<IProject, 'id'> & { _id: unknown; __v?: number };
 
 export const listProjects = async (): Promise<IProject[]> => {
   const projects = (await ProjectModel.find().lean().exec()) as ProjectLean[];
@@ -14,6 +14,7 @@ export const listProjects = async (): Promise<IProject[]> => {
     (project): IProject => ({
       id: String(project._id),
       title: project.title,
+      slug: project.slug,
       description: project.description,
       techStack: project.techStack,
       reasoning: project.reasoning,
@@ -22,7 +23,7 @@ export const listProjects = async (): Promise<IProject[]> => {
       imgUrl: project.imgUrl,
       repoUrl: project.repoUrl,
       liveUrl: project.liveUrl,
-      role: project.role
+      role: project.role,
     })
   );
 };
