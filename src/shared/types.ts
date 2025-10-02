@@ -25,16 +25,6 @@ export interface IProject extends ProjectCore {}
 
 export type CreateProjectDTO = Omit<ProjectCore, "id">;
 
-export interface TechStack extends SocialLink {
-  iconPublicId: string;
-}
-
-export interface Education extends SocialLink {
-  degree: string;
-  institution: string;
-  duration: string;
-}
-
 export interface Certifications {
   title: string;
   issuer: string;
@@ -99,3 +89,39 @@ export interface NamedErrorLike {
   name: string;
   message: string;
 }
+
+// Stack types
+
+export type StackCategory = "frontend" | "backend" | "fullstack" | "database" | "tooling" | "security";
+
+export type Tech = {
+  slug: string;
+  name: string;
+  category: StackCategory;
+  iconPublicId: string;
+}
+
+// Education types
+
+export type Education = {
+  id?: string;
+  title: string;
+  organization: string;
+  description?: string;
+  url?: string;
+}
+
+// Experience types
+
+export type Experience = {
+  id?: string;
+  role: string;
+  company: string;
+  description?: string;
+  startDate: string;
+  endDate?: string;
+  isCurrent?: boolean;
+  url?: string;
+}
+
+
