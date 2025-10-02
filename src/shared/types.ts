@@ -94,13 +94,6 @@ export interface NamedErrorLike {
 
 export type StackCategory = "frontend" | "backend" | "fullstack" | "database" | "tooling" | "security";
 
-export type Tech = {
-  slug: string;
-  name: string;
-  category: StackCategory;
-  iconPublicId: string;
-}
-
 // Education types
 
 export type Education = {
