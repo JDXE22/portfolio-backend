@@ -92,7 +92,7 @@ export interface NamedErrorLike {
 
 // Stack types
 
-export type StackCategory = "frontend" | "backend" | "fullstack" | "database" | "tooling" | "security";
+export type StackCategory = "frontend" | "backend" | "fullstack" | "database" | "tooling" | "security" | "language"
 
 // Education types
 

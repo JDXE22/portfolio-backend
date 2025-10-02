@@ -10,7 +10,8 @@
     "test": "jest --watchAll",
     "testEmail": "jest src/contact/adapters/contact.test.ts",
     "testAbout": "jest src/about/adapters/about.test.ts",
-    "testProjects": "jest src/projects/adapters/project.test.ts"
+    "testProjects": "jest src/projects/adapters/project.test.ts",
+    "testStack": "jest src/stack/adapters/stack.router.test.ts"
   },
   "repository": {
     "type": "git",
