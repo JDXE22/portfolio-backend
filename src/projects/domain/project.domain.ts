@@ -1,10 +1,11 @@
-import { DifficultyLevel, LiveStatus } from "@/shared/types";
+import { DifficultyLevel, LiveStatus } from '@/shared/types';
 
 export interface ProjectCore {
   id: string;
   title: string;
   description: string;
   techStack: string[];
+  slug: string;
   imgUrl?: string;
   repoUrl?: string;
   liveUrl?: string;
@@ -14,6 +15,6 @@ export interface ProjectCore {
   role?: string;
 }
 
-type MutableProjectFields = Omit<ProjectCore, "reasoning" | "difficultyLevel">;
+type MutableProjectFields = Omit<ProjectCore, 'reasoning' | 'difficultyLevel'>;
 
 export type UpdateProjectDTO = Partial<MutableProjectFields>;
