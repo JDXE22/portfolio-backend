@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Git",
+    "slug": "git",
+    "category": "tooling",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1758577320/git-svgrepo-com_eze0tt.svg"
+  },
+  {
+    "name": "TypeScript",
+    "slug": "typescript",
+    "category": "language",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339630/TypeScript_omjthp.svg"
+  },
+  {
+    "name": "Express",
+    "slug": "express",
+    "category": "backend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339630/Express_i7qrqa.svg"
+  },
+  {
+    "name": "MongoDB",
+    "slug": "mongodb",
+    "category": "backend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339628/MongoDB_k6sjb9.svg"
+  },
+  {
+    "name": "Node.js",
+    "slug": "node.js",
+    "category": "backend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339629/Node.js_wkdyih.svg"
+  },
+  {
+    "name": "PostgreSQL",
+    "slug": "postgresql",
+    "category": "backend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339630/PostgresSQL_aaelrf.svg"
+  },
+  {
+    "name": "JavaScript",
+    "slug": "javascript",
+    "category": "language",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339632/JavaScript_cuvfc7.svg"
+  },
+  {
+    "name": "SQL",
+    "slug": "sql",
+    "category": "backend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1758738789/sql-database-sql-azure-svgrepo-com_anmrvb.svg"
+  },
+  {
+    "name": "React",
+    "slug": "react",
+    "category": "frontend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339631/React_y67zzr.svg"
+  },
+  {
+    "name": "Docker",
+    "slug": "docker",
+    "category": "tooling",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339628/Docker_xjrisg.svg"
+  },
+
+  {
+    "name": "JWT",
+    "slug": "jwt",
+    "category": "security",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1759430269/jwt-3_pgbgor.svg"
+  },
+  {
+    "name": "Auth0",
+    "slug": "auth0",
+    "category": "security",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1759430269/auth0_ssgbil.svg"
+  },
+  {
+    "name": "NestJS",
+    "slug": "nestjs",
+    "category": "backend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339631/Nest.js_fcfvi5.svg"
+  },
+  {
+    "name": "Stripe",
+    "slug": "stripe",
+    "category": "tooling",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1758577321/stripe-icon_yrriw5.svg"
+  },
+  {
+    "name": "HTML5",
+    "slug": "html5",
+    "category": "frontend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1758577323/html-5-svgrepo-com_fqv5y7.svg"
+  },
+  {
+    "name": "CSS3",
+    "slug": "css3",
+    "category": "frontend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1758577321/css-3-svgrepo-com_ewcrjg.svg"
+  },
+  {
+    "name": "Tailwind",
+    "slug": "tailwind",
+    "category": "frontend",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339627/Tailwind_CSS_liqniv.svg"
+  },
+  {
+    "name": "Swagger",
+    "slug": "swagger",
+    "category": "tooling",
+    "iconPublicId": "https://res.cloudinary.com/dqyaxyvxz/image/upload/v1754339627/Swagger_ztdylg.svg"
+  }
+]
