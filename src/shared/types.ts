@@ -1,17 +1,17 @@
-import { ProjectCore } from "@/projects/domain/project.domain";
+import { ProjectCore } from '@/projects/domain/project.domain';
 
 // Shared types and enums
 export enum LiveStatus {
-  LIVE = "Live",
-  DOWN = "Down",
-  MAINTENANCE = "Maintenance",
-  DEVELOPMENT = "Development",
+  LIVE = 'Live',
+  DOWN = 'Down',
+  MAINTENANCE = 'Maintenance',
+  DEVELOPMENT = 'Development',
 }
 
 export enum DifficultyLevel {
-  EASY = "Easy",
-  MEDIUM = "Medium",
-  HARD = "Hard",
+  EASY = 'Easy',
+  MEDIUM = 'Medium',
+  HARD = 'Hard',
 }
 
 export interface SocialLink {
@@ -23,7 +23,7 @@ export interface SocialLink {
 
 export interface IProject extends ProjectCore {}
 
-export type CreateProjectDTO = Omit<ProjectCore, "id">;
+export type CreateProjectDTO = Omit<ProjectCore, 'id'>;
 
 export interface Certifications {
   title: string;
@@ -32,44 +32,44 @@ export interface Certifications {
 }
 
 export const ICONS: Record<string, string> = {
-  TypeScript: "typescript",
-  JavaScript: "javascript",
-  React: "react",
-  NodeJS: "nodejs",
-  Express: "express",
-  MongoDB: "mongodb",
-  PostgreSQL: "postgresql",
-  Docker: "docker",
-  SQL: "sql",
-  AWS: "aws",
-  NestJS: "nestjs",
-  Stripe: "stripe",
-  Nodemailer: "nodemailer",
-  HTML5: "html5",
-  CSS3: "css3",
-  Tailwind: "tailwindcss",
-  Swagger: "swagger",
+  TypeScript: 'typescript',
+  JavaScript: 'javascript',
+  React: 'react',
+  NodeJS: 'nodejs',
+  Express: 'express',
+  MongoDB: 'mongodb',
+  PostgreSQL: 'postgresql',
+  Docker: 'docker',
+  SQL: 'sql',
+  AWS: 'aws',
+  NestJS: 'nestjs',
+  Stripe: 'stripe',
+  Nodemailer: 'nodemailer',
+  HTML5: 'html5',
+  CSS3: 'css3',
+  Tailwind: 'tailwindcss',
+  Swagger: 'swagger',
 };
 
 // Error handling types
 
 export type MulterCode =
-  | "LIMIT_FILE_SIZE"
-  | "LIMIT_FILE_COUNT"
-  | "LIMIT_PART_COUNT"
-  | "LIMIT_FIELD_KEY"
-  | "LIMIT_FIELD_VALUE"
-  | "LIMIT_FIELD_COUNT"
-  | "LIMIT_UNEXPECTED_FILE";
+  | 'LIMIT_FILE_SIZE'
+  | 'LIMIT_FILE_COUNT'
+  | 'LIMIT_PART_COUNT'
+  | 'LIMIT_FIELD_KEY'
+  | 'LIMIT_FIELD_VALUE'
+  | 'LIMIT_FIELD_COUNT'
+  | 'LIMIT_UNEXPECTED_FILE';
 
 export const MULTER_ERROR_CODES: ReadonlySet<MulterCode> = new Set([
-  "LIMIT_FILE_SIZE",
-  "LIMIT_FILE_COUNT",
-  "LIMIT_PART_COUNT",
-  "LIMIT_FIELD_KEY",
-  "LIMIT_FIELD_VALUE",
-  "LIMIT_FIELD_COUNT",
-  "LIMIT_UNEXPECTED_FILE",
+  'LIMIT_FILE_SIZE',
+  'LIMIT_FILE_COUNT',
+  'LIMIT_PART_COUNT',
+  'LIMIT_FIELD_KEY',
+  'LIMIT_FIELD_VALUE',
+  'LIMIT_FIELD_COUNT',
+  'LIMIT_UNEXPECTED_FILE',
 ]);
 
 export interface MulterErrorLike {
@@ -79,7 +79,7 @@ export interface MulterErrorLike {
 }
 
 export interface DuplicateKeyErrorLike {
-  name: "MongoServerError";
+  name: 'MongoServerError';
   code: 11000;
   message: string;
   keyValue?: Record<string, unknown>;
@@ -92,7 +92,13 @@ export interface NamedErrorLike {
 
 // Stack types
 
-export type StackCategory = "frontend" | "backend" | "fullstack" | "database" | "tooling" | "security" | "language"
+export type StackCategory =
+  | 'frontend'
+  | 'backend'
+  | 'fullstack'
+  | 'tooling'
+  | 'security'
+  | 'language';
 
 // Education types
 
@@ -102,7 +108,7 @@ export type Education = {
   organization: string;
   description?: string;
   url?: string;
-}
+};
 
 // Experience types
 
@@ -115,6 +121,4 @@ export type Experience = {
   endDate?: string;
   isCurrent?: boolean;
   url?: string;
-}
-
-
+};
