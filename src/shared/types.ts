@@ -98,7 +98,7 @@ export type StackCategory =
   | 'fullstack'
   | 'tooling'
   | 'security'
-  | 'language';
+  | 'languages';
 
 // Education types
 
