@@ -1,9 +1,9 @@
-import {  SocialLink  } from "@/shared/types";
+import { TechSkill } from '@/shared/types';
 
 export interface AboutInfo {
   headline: string;
   bio: string;
   avatarIconUrl: string;
-  skills: string[];
-  socialLinks: SocialLink[];
+  techSkills: TechSkill[];
+  softSkills: string[];
 }
