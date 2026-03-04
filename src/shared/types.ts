@@ -21,6 +21,11 @@ export interface SocialLink {
   iconPublicId: string;
 }
 
+export interface TechSkill {
+  name: string;
+  level: number;
+}
+
 export interface IProject extends ProjectCore {}
 
 export type CreateProjectDTO = Omit<ProjectCore, 'id'>;

@@ -1,22 +1,17 @@
-import { AboutInfo } from "@/about/domain/aboutInfo";
-import aboutData from "@/about/about.json";
-import { CloudinaryAdapter } from "@/shared/adapters/cloudinary.config";
+import { AboutInfo } from '@/about/domain/aboutInfo';
+import aboutData from '@/about/about.json';
+import { CloudinaryAdapter } from '@/shared/adapters/cloudinary.config';
+import { TechSkill } from '@/shared/types';
 
 export async function getAbout(): Promise<AboutInfo[]> {
   const normalized: AboutInfo = {
     ...aboutData,
+    techSkills: aboutData.techSkills as TechSkill[],
     avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarIconUrl, {
-      crop: "fill",
+      crop: 'fill',
       width: 128,
       height: 128,
     }),
-    socialLinks: aboutData.socialLinks.map((link) => ({
-      ...link,
-      iconPublicId: CloudinaryAdapter.url(link.iconPublicId, {
-        width: 32,
-        height: 32,
-      }),
-    })),
   };
   return [normalized];
 }
