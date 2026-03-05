@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CLOUDINARY_API_SECRET = exports.CLOUDINARY_API_KEY = exports.CLOUDINARY_CLOUD_NAME = exports.MONGO_TEST_URI = exports.GMAIL_PORT = exports.GMAIL_PASS = exports.GMAIL_USER = exports.GMAIL_HOST = exports.MONGO_URI = exports.PORT = void 0;
+exports.CORS_ORIGINS = exports.CLOUDINARY_API_SECRET = exports.CLOUDINARY_API_KEY = exports.CLOUDINARY_CLOUD_NAME = exports.MONGO_TEST_URI = exports.GMAIL_PORT = exports.GMAIL_PASS = exports.GMAIL_USER = exports.GMAIL_HOST = exports.MONGO_URI = exports.PORT = void 0;
 require("dotenv/config");
 exports.PORT = process.env.PORT;
 exports.MONGO_URI = process.env.MONGO_URI;
@@ -12,3 +12,4 @@ exports.MONGO_TEST_URI = process.env.MONGO_TEST_URI;
 exports.CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
 exports.CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
 exports.CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
+exports.CORS_ORIGINS = process.env.CORS_ORIGINS;

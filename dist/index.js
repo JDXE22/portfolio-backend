@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const db_1 = require("@/db");
-const server_1 = require("@/server");
-const config_env_1 = require("@/shared/config.env");
+const db_1 = require("./db");
+const server_1 = require("./server");
+const config_env_1 = require("./shared/config.env");
 const mongoose_1 = __importDefault(require("mongoose"));
 async function startServer() {
     try {

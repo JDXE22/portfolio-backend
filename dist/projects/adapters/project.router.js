@@ -13,3 +13,12 @@ exports.projectRouter.get("/", async (req, res, next) => {
         next(error);
     }
 });
+exports.projectRouter.post("/", async (req, res, next) => {
+    try {
+        const newProject = await (0, project_services_1.createProject)(req.body);
+        res.status(201).json(newProject);
+    }
+    catch (error) {
+        next(error);
+    }
+});

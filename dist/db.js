@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectToDatabase = connectToDatabase;
 const mongoose_1 = __importDefault(require("mongoose"));
-const config_env_1 = require("@/shared/config.env");
+const config_env_1 = require("./shared/config.env");
 async function connectToDatabase() {
     if (!config_env_1.MONGO_URI) {
         throw new Error("MONGO_URI is not defined.");

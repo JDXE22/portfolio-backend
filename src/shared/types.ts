@@ -14,6 +14,13 @@ export enum DifficultyLevel {
   HARD = 'Hard',
 }
 
+export enum KnowledgeLevel {
+  FOUNDATIONAL = 'Foundational',
+  INTERMEDIATE = 'Intermediate',
+  ADVANCED = 'Advanced',
+  EXPERT = 'Expert',
+}
+
 export interface SocialLink {
   name?: string;
   url?: string;
@@ -23,7 +30,7 @@ export interface SocialLink {
 
 export interface TechSkill {
   name: string;
-  level: number;
+  level: KnowledgeLevel;
 }
 
 export interface IProject extends ProjectCore {}

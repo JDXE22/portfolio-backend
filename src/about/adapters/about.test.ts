@@ -1,5 +1,6 @@
 import supertest from 'supertest';
 import { httpServer } from '../../server';
+import { KnowledgeLevel } from '@/shared/types';
 
 const api = supertest(httpServer);
 
@@ -23,22 +24,23 @@ describe('About API Tests', () => {
       ),
     });
 
-    // techSkills: category-level with name and level percentage
+    // techSkills: category-level with qualitative knowledge levels
     expect(Array.isArray(about.techSkills)).toBe(true);
     expect(about.techSkills.length).toBeGreaterThan(0);
     expect(about.techSkills).toEqual(
       expect.arrayContaining([
         expect.objectContaining({
           name: expect.any(String),
-          level: expect.any(Number),
+          level: expect.any(String),
         }),
       ]),
     );
 
-    about.techSkills.forEach((skill: { name: string; level: number }) => {
-      expect(skill.level).toBeGreaterThanOrEqual(0);
-      expect(skill.level).toBeLessThanOrEqual(100);
-    });
+    about.techSkills.forEach(
+      (skill: { name: string; level: KnowledgeLevel }) => {
+        expect(Object.values(KnowledgeLevel)).toContain(skill.level);
+      },
+    );
 
     // softSkills: string array
     expect(Array.isArray(about.softSkills)).toBe(true);

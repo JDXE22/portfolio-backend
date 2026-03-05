@@ -35,7 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProjectModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const types_1 = require("@/shared/types");
+const types_1 = require("../../shared/types");
 const projectSchema = new mongoose_1.Schema({
     title: {
         type: String,
@@ -73,12 +73,19 @@ const projectSchema = new mongoose_1.Schema({
         enum: Object.values(types_1.DifficultyLevel),
         required: true,
     },
+    role: {
+        type: String,
+    },
+    slug: {
+        type: String,
+        unique: true,
+    },
 });
-projectSchema.virtual("id").get(function () {
+projectSchema.virtual('id').get(function () {
     return this._id.toHexString();
 });
-projectSchema.set("toJSON", {
+projectSchema.set('toJSON', {
     virtuals: true,
     versionKey: false,
 });
-exports.ProjectModel = mongoose_1.default.model("Project", projectSchema);
+exports.ProjectModel = mongoose_1.default.model('Project', projectSchema);
