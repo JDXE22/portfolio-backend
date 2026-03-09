@@ -7,7 +7,7 @@ export async function getAbout(): Promise<AboutInfo[]> {
   const normalized: AboutInfo = {
     ...aboutData,
     techSkills: aboutData.techSkills as TechSkill[],
-    avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarIconUrl, {
+    avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarPublicId, {
       crop: 'fill',
       width: 128,
       height: 128,
