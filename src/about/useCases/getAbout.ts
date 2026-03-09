@@ -9,7 +9,6 @@ export async function getAbout(): Promise<AboutInfo[]> {
     ...rest,
     techSkills: rest.techSkills as TechSkill[],
     avatarIconUrl: CloudinaryAdapter.url(avatarUrl, {
-      type: 'fetch',
       crop: 'fill',
       width: 128,
       height: 128,
