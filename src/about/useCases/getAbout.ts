@@ -4,10 +4,11 @@ import { CloudinaryAdapter } from '@/shared/adapters/cloudinary.config';
 import { TechSkill } from '@/shared/types';
 
 export async function getAbout(): Promise<AboutInfo[]> {
+  const { avatarPublicId, ...rest } = aboutData;
   const normalized: AboutInfo = {
-    ...aboutData,
-    techSkills: aboutData.techSkills as TechSkill[],
-    avatarIconUrl: CloudinaryAdapter.url(aboutData.avatarPublicId, {
+    ...rest,
+    techSkills: rest.techSkills as TechSkill[],
+    avatarIconUrl: CloudinaryAdapter.url(avatarPublicId, {
       crop: 'fill',
       width: 128,
       height: 128,
